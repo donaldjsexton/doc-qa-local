@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Doc Q&A (Local)</title>
+  <link rel="stylesheet" href="/static/style.css"/>
+</head>
+<body>
+  <header>
+    <h1>Doc Q&A (Local)</h1>
+    <p class="sub">No external APIs. Upload → Ask.</p>
+  </header>
+
+  <main>
+    <section class="panel">
+      <h2>1) Upload</h2>
+      <form id="uploadForm">
+        <input type="file" id="file" name="file" accept=".pdf,.txt,.md" required>
+        <input type="text" id="docId" name="doc_id" placeholder="Doc ID (optional)">
+        <button type="submit">Ingest</button>
+      </form>
+      <pre id="ingestOut"></pre>
+    </section>
+
+    <section class="panel">
+      <h2>2) Ask</h2>
+      <form id="askForm">
+        <input type="text" id="question" placeholder="Your question" required>
+        <input type="text" id="askDocId" placeholder="Doc ID filter (optional)">
+        <button type="submit">Ask</button>
+      </form>
+      <div id="answer"></div>
+      <pre id="sources"></pre>
+    </section>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
+
